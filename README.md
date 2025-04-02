@@ -2,16 +2,18 @@
 
 ## Assumptions
 
-#### 1. Order Types:
+#### Order Types:
 - Bill To: Represents the customer who placed the order. (Code: 32604)
 - Ship To: Represents the location where the shipment needs to be transferred.
 
-#### 2. Handling Orders:
+#### Handling Orders:
 - Create a new Ship To order to deliver the billing invoice to the customer's location. *(invoice_df | id=1 | outputData)*
 - Keep all Ship To orders as they are. *(shipto_df | id=2-75 | outputData)*
 - Keep the original Bill To transaction for maintaining clarity. *(billto_df | id=76 | outputData)*
 
-#### 3. Assuming all shipments belong to a single customer due to insufficient linkings.
+#### Assuming all shipments belong to a single customer due to insufficient linkings.
+
+#### Assuming that the zip in the format `xxxxx-yyyy` is ‘US’ and `xxxxx` format is ‘USA’ as a country.
 
 ## Logic
 
